@@ -17,3 +17,7 @@ console.log('man cant whip init')
 
 
 }
+
+
+
+console.log (true )

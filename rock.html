@@ -10,15 +10,31 @@
    <h1> rock paper siccors</h1> 
    <button onclick="const randomNumber = Math.random();
    
+let compMove = '';
+
    if (randomNumber >= 0 && randomNumber < 1/3 ) {
-    const compMove = 'rock';
+     compMove = 'rock';
    } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
-    const compMove ='paper'; 
+     compMove ='paper'; 
 } else if (randomNumber >= 2/3 && randomNumber < 1) {
 
-    const compMove ='sicors';
+     compMove ='siccors';
 }
+
 console.log(compMove)
+
+let result = '';
+
+if (compMove === 'rock') {
+
+   result = 'tie';
+} else if  (compMove === 'paper') {
+    result = 'you loseeeee'; 
+} else if ( compMove === 'siccors') {  
+ result = 'you win'}
+
+ alert(`you picked rock. Computer picked,  ${compMove} ${result}`);
+
     ">rock</button>
 
 
@@ -26,8 +42,78 @@ console.log(compMove)
 
 
 
-<button>paper</button>
+<button  onclick="const randomNumber = Math.random();
+   
+let compMove = '';
 
-<button>siccors</button>
+   if (randomNumber >= 0 && randomNumber < 1/3 ) {
+     compMove = 'rock';
+   } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+     compMove ='paper'; 
+} else if (randomNumber >= 2/3 && randomNumber < 1) {
+
+     compMove ='siccors';
+}
+
+console.log(compMove)
+
+let result = '';
+
+if (compMove === 'rock') {
+
+   result = 'W';
+} else if  (compMove === 'paper') {
+    result = 'you TIE'; 
+} else if ( compMove === 'siccors') {  
+ result = ' L'}
+
+ alert(`you picked paper. Computer picked,  ${compMove} ${result}`);
+
+    "
+
+
+
+
+
+
+
+
+
+
+
+>paper</button>
+
+<button  
+
+onclick="const randomNumber = Math.random();
+   
+let compMove = '';
+
+   if (randomNumber >= 0 && randomNumber < 1/3 ) {
+     compMove = 'rock';
+   } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+     compMove ='paper'; 
+} else if (randomNumber >= 2/3 && randomNumber < 1) {
+
+     compMove ='siccors';
+}
+
+console.log(compMove)
+
+let result = '';
+
+if (compMove === 'rock') {
+
+   result = 'L';
+} else if  (compMove === 'paper') {
+    result = 'W'; 
+} else if ( compMove === 'siccors') {  
+ result = 'tie'}
+
+ alert(`you picked sic. Computer picked,  ${compMove} ${result}`);
+
+    "
+
+>siccors</button>
 </body>
 </html>

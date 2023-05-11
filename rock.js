@@ -1,4 +1,46 @@
 
+
+let score = JSON.parse(localStorage.getItem('score'))|| { 
+
+  wins:  0,
+ losses: 0,
+ ties: 0
+
+}
+
+
+
+
+updateScoreHtml();
+displayResult();
+
+
+/*
+  if (!score) {
+
+score =  {
+
+  wins:  0,
+ losses: 0,
+ ties: 0
+
+}
+
+  }
+  */
+
+
+
+function resetScore(){
+
+score.wins =  0;
+score.losses = 0;
+score.ties = 0;
+localStorage.removeItem('score')
+updateScoreHtml();
+
+}
+
 function playDaTing (playerMove){
 
   const compMove = compPickMove();
@@ -11,7 +53,7 @@ function playDaTing (playerMove){
   } else if  (compMove === 'paper') {
       result = 'W'; 
   } else if ( compMove === 'siccors') {  
-   result = 'tie'}
+   result = 'TIE'}
   
    } else if (playerMove === 'paper') {
     
@@ -20,23 +62,48 @@ function playDaTing (playerMove){
     
        result = 'W';
     } else if  (compMove === 'paper') {
-        result = 'you TIE'; 
+        result = 'TIE'; 
     } else if ( compMove === 'siccors') {  
-     result = ' L'}
+     result = 'L'}
     
     } else if (playerMove === 'rock') {
       if (compMove === 'rock') {
 
-        result = 'tie';
+        result = 'TIE';
      } else if  (compMove === 'paper') {
-         result = 'you loseeeee'; 
+         result = 'L'; 
      } else if ( compMove === 'siccors') {  
-      result = 'you win'}
+      result = 'W'}
 
     }
+
+if (result === 'W'){ score.wins += 1 
+} else if ( result === 'L' ) { score.losses += 1
+} else if ( result ==='TIE') { score.ties += 1} 
+
   
-  alert(`you picked ${playerMove}. Computer picked,  ${compMove} ${result}`); 
+localStorage.setItem('score', JSON.stringify(score));
+
+updateScoreHtml();
+
+document.querySelector('.result').innerHTML = result;
+
+document.querySelector('.move').innerHTML = `you picked ${playerMove}. Computer picked,  ${compMove}`;
+
+ 
 }
+
+function updateScoreHtml(){
+
+  document.querySelector('.scoreinnit').innerHTML = `your wins is ${score.wins}, your losses ${score.losses}, your ties ${score.ties}`;
+}
+
+
+
+
+
+
+
 
 
 function compPickMove(){

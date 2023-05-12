@@ -5,13 +5,14 @@ function subInnit(){
 
 
 const buttonElm = document.querySelector('.yt'); 
-if( buttonElm.innerText === 'subscribe') { buttonElm.innerHTML = 'subbed' 
-} else  { buttonElm.innerHTML = 'subscribe'} 
-
-
-
+if( buttonElm.innerText === 'subscribe') { buttonElm.innerHTML = 'subbed';
+ buttonElm.classList.add('clicked')
+} else  { buttonElm.innerHTML = 'subscribe';  buttonElm.classList.remove('clicked')} 
 
 }
+
+
+
 
 
 function calcOrder(){
